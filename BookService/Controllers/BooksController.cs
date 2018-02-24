@@ -18,6 +18,7 @@ namespace BookService.Controllers
     using BookService.DTO;
     #endregion
   [RoutePrefix("api/books")]
+  [Route("api/books")]
     public class BooksController : ApiController
     {
         private BookServiceContext db = new BookServiceContext();
@@ -40,8 +41,8 @@ namespace BookService.Controllers
                        Author = x.Author.Name
             };
 
-        // GET: api/Books       
-        public IQueryable<BookDTO> GetBooks()
+        // GET: api/Books   
+             public IQueryable<BookDTO> GetBooks()
         {
             return db.Books.Include(b => b.Author).Select(AsBookDTO);
         }

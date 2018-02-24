@@ -18,7 +18,6 @@ namespace BookService.Controllers
     using BookService.DTO;
     #endregion
   [RoutePrefix("api/books")]
-  [Route("api/books")]
     public class BooksController : ApiController
     {
         private BookServiceContext db = new BookServiceContext();
